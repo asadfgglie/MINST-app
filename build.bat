@@ -11,10 +11,4 @@ pyinstaller ^
     -n MNIST手寫辨識 ^
     --clean
 
-if  %errorlevel%==0 (
-    echo 編譯完成!
-    echo 檔案位於 %cd%\dist\MNIST手寫辨識\MNIST手寫辨識.exe
-)  else  (
-    echo 編譯失敗!
-    echo 錯誤代碼: %errorlevel%
-)
+if  %errorlevel%==0 (echo 編譯完成 檔案位於 %cd%\dist\MNIST手寫辨識\MNIST手寫辨識.exe) else (echo 編譯失敗 錯誤代碼: %errorlevel%)
