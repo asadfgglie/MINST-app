@@ -55,6 +55,7 @@ def get_model_info():
     return short_model_summary
 
 root = Tk()
+root.resizable(0,0)
 root.title('MNIST 手寫數字辨識板')
 root.iconbitmap("icon/icon.ico")
 root.columnconfigure(0, weight=1)
