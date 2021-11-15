@@ -5,6 +5,7 @@ import numpy as np
 from numpy import argmax
 from PIL import Image
 from PIL.ImageOps import invert
+import os
 
 model = load_model('./models/CNN2021-11-14')
 
@@ -24,6 +25,10 @@ def predict_pic():
     canvas.update()
     canvas.postscript(file='img.eps')
     data = Image.open('img.eps').convert('L').resize((28,28))
+    try:
+        os.remove('img.eps')
+    except:
+        pass
     data = invert(data)
     data = np.array(
                         [
