@@ -7,7 +7,17 @@ from PIL import Image
 from PIL.ImageOps import invert
 import os
 
-model = load_model('./models/CNN2021-11-14')
+PATH = os.getcwd()
+print(PATH)
+
+model_list = []
+
+for entry in os.listdir(PATH + '/models/'):
+    if os.path.isdir(os.path.join(PATH + '/models/', entry)):
+        print(entry)
+        model_list.append(entry)
+
+model = load_model(PATH + '/models/' + model_list[0])
 
 def savePosn(event):
     global lastx, lasty
@@ -23,24 +33,19 @@ def addLine(event):
 def predict_pic():
     # save postscipt image 
     canvas.update()
-    canvas.postscript(file='img.eps')
-    data = Image.open('img.eps').convert('L').resize((28,28))
+    canvas.postscript(file=PATH + '/img.eps')
+    data = None
     try:
-        os.remove('img.eps')
+        data = Image.open(PATH + '/img.eps').convert('L').resize((28,28))
     except:
-        pass
+        prediction['text'] = "讀取圖片失敗!"
+        return
+    try:
+        os.remove(PATH + '/img.eps')
+    except:
+        prediction['text'] += "\n清除緩存失敗!"
     data = invert(data)
-    data = np.array(
-                        [
-                            list(
-                                np.array(
-                                        list(
-                                                data.getdata()
-                                            )
-                                        ).reshape((28,28))
-                                )
-                        ]
-                    )/255.0
+    data = np.array( [ list( np.array( list( data.getdata() ) ).reshape((28,28)) ) ] ) / 255.0
     prediction['text'] = prediction_str + str(argmax(model.predict(data[:])))
 
 def delete():
@@ -62,7 +67,7 @@ def get_model_info():
 root = Tk()
 root.resizable(0,0)
 root.title('MNIST 手寫數字辨識板')
-root.iconbitmap("icon/icon.ico")
+root.iconbitmap(PATH + "/icon/icon.ico")
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
@@ -83,8 +88,8 @@ model_info = ttk.Label(root, text=model_info_str + get_model_info())
 model_info.grid(column=2, row=0, sticky=(N, W), padx=5, pady=5)
 
 model_select = ttk.Combobox(root)
-model_select['values'] = ('NN2021-11-14', 'CNN2021-11-14')
-model_select.set('CNN2021-11-14')
+model_select['values'] = model_list
+model_select.set(model_list[0])
 model_select.state(["readonly"])
 model_select.bind('<<ComboboxSelected>>', change_model)
 model_select.grid(column=1, row=1, padx=5, pady=5, sticky=(E, W))
