@@ -49,4 +49,4 @@ build.bat 同時還會自動安裝所需要的套件，若已經安裝過，不�
 
 ## 編譯完成的下載連結
 
-https://download1585.mediafire.com/72vzxvyxjz7g/x3d9b62j1wt14td/MNIST%E6%89%8B%E5%AF%AB%E8%BE%A8%E8%AD%98.zip
+<a herf = "https://download1585.mediafire.com/72vzxvyxjz7g/x3d9b62j1wt14td/MNIST%E6%89%8B%E5%AF%AB%E8%BE%A8%E8%AD%98.zip">Click me</a>
