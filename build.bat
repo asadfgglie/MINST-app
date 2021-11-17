@@ -1,3 +1,4 @@
+@ECHO off
 chcp 65001
 pip install -r requirements.txt
 pyinstaller ^
@@ -12,3 +13,6 @@ pyinstaller ^
     --clean
 
 if  %errorlevel%==0 (echo 編譯完成 檔案位於 %cd%\dist\MNIST手寫辨識\MNIST手寫辨識.exe) else (echo 編譯失敗 錯誤代碼: %errorlevel%)
+
+rd /s/q %cd%\__pycache__
+rd /s/q %cd%\build
