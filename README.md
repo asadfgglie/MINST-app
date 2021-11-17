@@ -46,3 +46,7 @@ build.bat 是一個自動幫你把這個專案變成.exe檔案的東東，如下
 build.bat 同時還會自動安裝所需要的套件，若已經安裝過，不需要再次安裝的話，可以使用 `rem` 將 `build.bat` 的第二行註解掉或直接刪除
 
 編譯完成後，可執行檔案會在 `.\dist\MNIST手寫辨識\MNIST手寫辨識.exe`
+
+## 編譯完成的下載連結
+
+https://download1585.mediafire.com/72vzxvyxjz7g/x3d9b62j1wt14td/MNIST%E6%89%8B%E5%AF%AB%E8%BE%A8%E8%AD%98.zip
