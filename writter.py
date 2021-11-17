@@ -15,7 +15,10 @@ model_list = []
 for entry in os.listdir(PATH + '/models/'):
     if os.path.isdir(os.path.join(PATH + '/models/', entry)):
         print(entry)
-        model_list.append(entry)
+        path = os.listdir(os.path.join(PATH + '/models/', entry))
+        print(path)
+        if 'saved_model.pbtxt' in path or 'saved_model.pb' in path:
+            model_list.append(entry)
 
 model = load_model(PATH + '/models/' + model_list[0])
 
