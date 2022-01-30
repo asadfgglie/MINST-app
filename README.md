@@ -1,5 +1,9 @@
 # README
 
+github: <https://github.com/asadfgglie/MINST-app>
+
+模型來源: 自己訓練的模型
+
 ## 介紹
 
 你可以在左方的繪圖區用滑鼠寫上你的數字，然後AI就會自動辨識所寫的數字
