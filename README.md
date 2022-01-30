@@ -42,7 +42,7 @@ pip install -r requirements.txt
 
 ## 編譯成exe可執行檔案
 
-build.bat 是一個自動幫你把這個專案變成.exe檔案的東東，如下所示:
+build.bat 是一個自動幫你把這個專案變成.exe檔案的腳本，如下所示:
 ```
 build.bat
 ```
