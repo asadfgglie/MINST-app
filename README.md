@@ -14,12 +14,12 @@
 ## 使用
 
 輸入
->\> `python writter.py`
+```python writter.py```
 
 即可使用，記得安裝必要套件
 
 使用
->\> `pip install -r requirements.txt`
+```pip install -r requirements.txt```
 
 來安裝必要套件
 
@@ -39,7 +39,7 @@
 ## 編譯成exe可執行檔案
 
 build.bat 是一個自動幫你把這個專案變成.exe檔案的東東，如下所示:
->\> `build.bat`
+```build.bat```
 
 根據電腦性能所需時間不等，約 5 ~ 15 分鐘即可完成
 
