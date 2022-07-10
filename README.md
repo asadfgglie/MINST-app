@@ -13,7 +13,6 @@ github: <https://github.com/asadfgglie/MINST-app>
 有兩種模型可用，一種是卷積神經網路(CNN)，另一種則是最基本的神經網路(NN)
 
 ---
----
 
 ## 使用
 
@@ -41,7 +40,10 @@ pip install -r requirements.txt
 
 若是已經編譯好的手寫板想新增模型，在手寫板執行檔目錄中也有一個 `models` 資料夾，將 tensorflow 框架模型放進去即可使用
 
----
+模型輸入維度須為(None, 28, 28)
+
+模型輸出維度須為(None, 10)
+
 ---
 
 ## 編譯成exe可執行檔案
