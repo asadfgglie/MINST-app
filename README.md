@@ -56,7 +56,3 @@ build.bat
 build.bat 同時還會自動安裝所需要的套件，若已經安裝過，不需要再次安裝的話，可以使用 `rem` 將 `build.bat` 的第二行註解掉或直接刪除
 
 編譯完成後，可執行檔案會在 `.\dist\MNIST手寫辨識\MNIST手寫辨識.exe`
-
-## 編譯完成的下載連結
-
-<https://www.mediafire.com/file/19nmw012dc9d59p/MNIST手寫辨識.zip/file>
